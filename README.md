@@ -1,2 +1,4 @@
 # jspboard
-jsp&amp;servlet을 이용한 간단한 웹 게시판
+mvc패턴을 이용해 serlvet과 jsp로 간단한 CRUD 기능 구현 게시판
+
+
