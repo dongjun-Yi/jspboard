@@ -7,5 +7,7 @@
 <body>
 <br/>
 <a href="login">logIn</a>
+<br>
+<a href="signup">Signup</a>
 </body>
 </html>
