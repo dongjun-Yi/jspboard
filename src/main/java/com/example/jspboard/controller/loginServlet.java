@@ -1,5 +1,7 @@
-package com.example.jspboard;
+package com.example.jspboard.controller;
 
+import com.example.jspboard.model.Member;
+import com.example.jspboard.model.MemberModel;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,5 +19,21 @@ public class loginServlet extends HttpServlet {
         String viewPath = "/WEB-INF/login-form.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        for (Member m : MemberModel.members) {
+            if (username.equals(m.getUsername()) && password.equals(m.getPassword())) {
+                System.out.println("m = " + m.getUsername());
+                String viewPath = "/WEB-INF/post-list.jsp";
+                RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
+                dispatcher.forward(req, resp);
+            }
+
+        }
     }
 }
