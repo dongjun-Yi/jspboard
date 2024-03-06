@@ -17,7 +17,7 @@
 <h1>loginForm</h1>
 <form action="save" method="post">
     username: <input type="text" name="username"/>
-    age: <input type="text" name="age"/>
+    password: <input type="password" name="password"/>
     <button type="submit">전송</button>
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
