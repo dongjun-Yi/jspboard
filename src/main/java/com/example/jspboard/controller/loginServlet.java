@@ -2,6 +2,7 @@ package com.example.jspboard.controller;
 
 import com.example.jspboard.model.Member;
 import com.example.jspboard.model.MemberModel;
+import com.example.jspboard.model.Post;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "loginServlet", urlPatterns = "/login")
 public class loginServlet extends HttpServlet {
@@ -28,12 +30,10 @@ public class loginServlet extends HttpServlet {
 
         for (Member m : MemberModel.members) {
             if (username.equals(m.getUsername()) && password.equals(m.getPassword())) {
-                System.out.println("m = " + m.getUsername());
                 String viewPath = "/WEB-INF/post-list.jsp";
                 RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
                 dispatcher.forward(req, resp);
             }
-
         }
     }
 }
