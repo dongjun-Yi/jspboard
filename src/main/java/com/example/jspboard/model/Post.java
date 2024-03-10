@@ -4,11 +4,21 @@ public class Post {
     private Long id;
     private String title;
     private String content;
+    private String writer;
 
-    public Post(Long id, String title, String content) {
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
+
+    public Post(Long id, String title, String content, String writer) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.writer = writer;
     }
 
     public String getTitle() {
