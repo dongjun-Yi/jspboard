@@ -27,7 +27,7 @@ public class homeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String viewPath = "/WEB-INF/home.jsp";
+        String viewPath = "/WEB-INF/login-form.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }
