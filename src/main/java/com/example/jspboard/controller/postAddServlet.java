@@ -23,8 +23,9 @@ public class postAddServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getSession().getAttribute("username").toString();
         if (!isPostExists(req)) {
-            Post post = new Post(PostModel.generateId(), req.getParameter("title"), req.getParameter("content"));
+            Post post = new Post(PostModel.generateId(), req.getParameter("title"), req.getParameter("content"), username);
             PostModel.posts.add(post);
         }
 
