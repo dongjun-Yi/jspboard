@@ -10,6 +10,6 @@ public class PostModel {
         if (id == null) {
             id = 0L;
         }
-        return id++;
+        return ++id;
     }
 }
