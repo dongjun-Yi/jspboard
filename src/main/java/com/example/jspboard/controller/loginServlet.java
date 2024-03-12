@@ -33,7 +33,10 @@ public class loginServlet extends HttpServlet {
         for (Member m : MemberModel.members) {
             if (username.equals(m.getUsername()) && password.equals(m.getPassword())) {
                 isValidUser = true;
-                req.getSession().setAttribute("username", username);
+
+                if (req.getSession().isNew() || req.getSession().getAttribute("username") == null) {
+                    req.getSession().setAttribute("username", username);
+                }
                 String viewPath = "/WEB-INF/post-list.jsp";
                 RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
                 dispatcher.forward(req, resp);
