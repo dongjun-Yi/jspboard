@@ -16,7 +16,7 @@ public class loginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String viewPath = "/WEB-INF/login-form.jsp";
+        String viewPath = "/WEB-INF/v1/login-form.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }
@@ -34,7 +34,7 @@ public class loginServlet extends HttpServlet {
                 if (req.getSession().isNew() || req.getSession().getAttribute("username") == null) {
                     req.getSession().setAttribute("username", username);
                 }
-                String viewPath = "/WEB-INF/post-list.jsp";
+                String viewPath = "/WEB-INF/v1/post-list.jsp";
                 RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
                 dispatcher.forward(req, resp);
                 break;
@@ -42,7 +42,7 @@ public class loginServlet extends HttpServlet {
         }
         if (!isValidUser) {
             req.setAttribute("loginError", "로그인 정보가 올바르지 않습니다.");
-            String viewPath = "/WEB-INF/login-form.jsp";
+            String viewPath = "/WEB-INF/v1/login-form.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
             dispatcher.forward(req, resp);
         }

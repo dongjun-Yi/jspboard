@@ -21,7 +21,7 @@ public class postDetailServlet extends HttpServlet {
         req.setAttribute("id", id);
         req.setAttribute("title", title);
         req.setAttribute("content", content);
-        String viewPath = "WEB-INF/post-detail.jsp";
+        String viewPath = "/WEB-INF/v1/post-detail.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }

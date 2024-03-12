@@ -16,7 +16,7 @@ public class postAddServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String viewPath = "/WEB-INF/post-add.jsp";
+        String viewPath = "/WEB-INF/v1/post-add.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }
@@ -29,7 +29,7 @@ public class postAddServlet extends HttpServlet {
             PostModel.posts.add(post);
         }
 
-        String viewPath = "/WEB-INF/post-list.jsp";
+        String viewPath = "/WEB-INF/v1/post-list.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }

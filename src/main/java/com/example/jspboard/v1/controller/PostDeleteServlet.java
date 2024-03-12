@@ -25,7 +25,7 @@ public class PostDeleteServlet extends HttpServlet {
         }
         System.out.println(PostModel.posts.size());
 
-        String viewPath = "WEB-INF/post-list.jsp";
+        String viewPath = "/WEB-INF/v1/post-list.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }

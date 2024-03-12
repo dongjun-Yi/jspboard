@@ -15,7 +15,7 @@ import java.io.IOException;
 public class signupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String viewPath = "/WEB-INF/signup-form.jsp";
+        String viewPath = "/WEB-INF/v1/signup-form.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }
@@ -27,7 +27,7 @@ public class signupServlet extends HttpServlet {
 
         Member member = new Member(username, password);
         MemberModel.members.add(member);
-        String viewPath = "/index.jsp";
+        String viewPath = "/WEB-INF/v1/login-form.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
     }
