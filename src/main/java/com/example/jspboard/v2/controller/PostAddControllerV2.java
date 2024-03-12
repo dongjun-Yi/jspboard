@@ -13,7 +13,7 @@ public class PostAddControllerV2 implements ControllerV2 {
     @Override
     public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getMethod().equals("GET")) {
-            String viewPath = "/WEB-INF/post-add.jsp";
+            String viewPath = "/WEB-INF/v2/post-add.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
             dispatcher.forward(req, resp);
         } else if (req.getMethod().equals("POST")) {
@@ -23,7 +23,7 @@ public class PostAddControllerV2 implements ControllerV2 {
                 PostModel.posts.add(post);
             }
 
-            String viewPath = "/WEB-INF/post-list.jsp";
+            String viewPath = "/WEB-INF/v2/post-list.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
             dispatcher.forward(req, resp);
         }

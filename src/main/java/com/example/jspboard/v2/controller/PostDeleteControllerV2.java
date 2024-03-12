@@ -24,7 +24,7 @@ public class PostDeleteControllerV2 implements ControllerV2 {
             }
             System.out.println(PostModel.posts.size());
 
-            String viewPath = "/WEB-INF/post-list.jsp";
+            String viewPath = "/WEB-INF/v2/post-list.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
             dispatcher.forward(req, resp);
         }

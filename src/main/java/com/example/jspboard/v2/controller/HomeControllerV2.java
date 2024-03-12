@@ -11,7 +11,7 @@ public class HomeControllerV2 implements ControllerV2 {
     @Override
     public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getMethod().equals("GET")) {
-            String viewPath = "/WEB-INF/login-form.jsp";
+            String viewPath = "/WEB-INF/v2/login-form.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
             dispatcher.forward(req, resp);
         }

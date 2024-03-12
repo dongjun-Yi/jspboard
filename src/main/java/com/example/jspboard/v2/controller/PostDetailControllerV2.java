@@ -18,7 +18,7 @@ public class PostDetailControllerV2 implements ControllerV2 {
             req.setAttribute("id", id);
             req.setAttribute("title", title);
             req.setAttribute("content", content);
-            String viewPath = "/WEB-INF/post-detail.jsp";
+            String viewPath = "/WEB-INF/v2/post-detail.jsp";
             RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
             dispatcher.forward(req, resp);
         }
