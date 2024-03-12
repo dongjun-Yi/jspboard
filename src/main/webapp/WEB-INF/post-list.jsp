@@ -8,11 +8,15 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<div class="container" style="margin-top: 8em;">
+<h2 style="text-align: center; margin-top: 4em;">Welcome ${sessionScope.username}!</h2>
+<div class="container" style="margin-top: 4em;">
     <div class="row justify-content-between align-items-center">
-        <div class="col-md-10 text-md-end">
-            <form action="post-add" method="get">
+        <div class="col-md-10 text-md-end d-flex justify-content-end">
+            <form action="post-add" method="get" class="mr-2">
                 <button type="submit" class="btn btn-primary">게시글 작성</button>
+            </form>
+            <form action="logout" method="post">
+                <button class="btn btn-primary">로그아웃</button>
             </form>
         </div>
     </div>
@@ -31,8 +35,8 @@
                                 <c:when test="${username eq item.writer}">
                                     <a href="/post-detail?id=${item.id}&title=${item.title}&content=${item.content}"
                                        class="text-decoration-none">
-                                        <li class="list-group-item">${item.id}. ${item.title} | 작성자 : ${item.writer}
-                                            <div style="float:right;">수정</div>
+                                        <li class="list-group-item">${item.id}. ${item.title}
+                                            <div style="float:right;">작성자 : ${item.writer}</div>
                                         </li>
                                     </a>
                                 </c:when>

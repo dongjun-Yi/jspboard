@@ -25,7 +25,7 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                   name="content">${content}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">추가</button>
+                    <button type="submit" class="btn btn-primary">수정</button>
                 </form>
             </div>
         </div>
