@@ -1,8 +1,7 @@
-package com.example.jspboard.controller;
+package com.example.jspboard.v1.controller;
 
 import com.example.jspboard.model.Member;
 import com.example.jspboard.model.MemberModel;
-import com.example.jspboard.model.Post;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,8 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 @WebServlet(name = "loginServlet", urlPatterns = "/login")
 public class loginServlet extends HttpServlet {

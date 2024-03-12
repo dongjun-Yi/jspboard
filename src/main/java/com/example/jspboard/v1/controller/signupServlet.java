@@ -1,4 +1,4 @@
-package com.example.jspboard.controller;
+package com.example.jspboard.v1.controller;
 
 import com.example.jspboard.model.Member;
 import com.example.jspboard.model.MemberModel;

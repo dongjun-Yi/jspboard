@@ -1,4 +1,4 @@
-package com.example.jspboard.controller;
+package com.example.jspboard.v1.controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
