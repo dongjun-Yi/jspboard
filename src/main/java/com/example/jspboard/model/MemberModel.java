@@ -1,4 +1,4 @@
-package com.example.jspboard.model;
+package com.example.jspboard.v1.model;
 
 import java.util.ArrayList;
 
