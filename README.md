@@ -1,6 +1,6 @@
 # 웹 게시판 서버 아키텍처 개선하기
 
-### V1 : MVC패턴에 따라 뷰 랜더링, 비즈니스 로직, 데이터를 분리
+### V1 : MVC 패턴에 따라 뷰 랜더링, 비즈니스 로직, 데이터를 저장하는 역할을 나눔
 
   * Model은 클래스(POJO), View는 jsp, Controller는 servlet로 구성.
   * Controller인 servlet에서 요청 경로마다 **공통의 비즈니스 로직 중복** 작성되는 문제 발생.
@@ -13,7 +13,7 @@
 ### V2 : Front Controller 패턴 도입
   * 공통된 비즈니스 로직을 하나의 서블릿으로 모든 클라이언트의 요청 처리하도록 FrontController 도입.
   * 중복되는 viewPath으로 만약 jsp의 코드가 변경되면 viewPath를 변경해야 하는 문제 발생.
-  * ex) 모든 controller에 viewPath의 물리적인 주소
+  * ex) 모든 controller에 구성된 viewPath의 물리적인 주소
    ```
    String viewPath = "/WEB-INF/post-list.jsp"
    ```
@@ -35,8 +35,8 @@
    ```
 
 ### V4 : Model 추가 + viewResolver 추가
-  * 서블릿에 대한 종속성을 제거하기 위해 model 전달하도록 구현.
-  * ViewResolver에게 논리적인 viewPath를 전달해 실제 viewPath 경로를 만들어 MyView객체를 반환.
+  * Controller마다 서블릿에 대한 종속성을 제거하기 위해 FrontController에서 model을 생성해 실행하는 Controller에게 전달하도록 구현.
+  * ViewResolver는 실제 viewPath 경로를 만들어 MyView객체를 반환.
   * FrontController 로직
    ```
     Map<String, String> paramMap = createParamMap(req); // request 객체의 속성들을 paramMap에 보관
