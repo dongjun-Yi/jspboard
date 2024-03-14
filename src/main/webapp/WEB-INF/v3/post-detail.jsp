@@ -20,10 +20,10 @@
                     내용 : <label class="form-label">${content}</label>
                 </div>
                 <button class="btn btn-primary" style="margin-top: 8em;"
-                        onclick="location.href='/v2/post-detail-update?id=${id}&title=${title}&content=${content}'">수정
+                        onclick="location.href='/v3/post-detail-update?id=${id}&title=${title}&content=${content}'">수정
                 </button>
 
-                <a href="/v2/post-delete?id=${id}" class="btn btn-danger" style="margin-top: 8em;"
+                <a href="/v3/post-delete?id=${id}" class="btn btn-danger" style="margin-top: 8em;"
                    onclick="if(!confirm('정말로 삭제하시겠습니까?')) return false"> 삭제
                 </a>
             </div>

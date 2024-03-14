@@ -16,18 +16,20 @@ public class PostAddControllerV4 implements ControllerV4 {
         if (method.equals("GET")) {
             return "post-add";
         } else if (method.equals("POST")) {
+            System.out.println("POST");
             String username = session.getAttribute("username").toString();
             if (!isPostExists(paramMap)) {
                 Post post = new Post(PostModel.generateId(), paramMap.get("title"), paramMap.get("content"), username);
                 PostModel.posts.add(post);
-                return "post-list";
             }
+            return "post-list";
         }
         return null;
     }
 
     private static boolean isPostExists(Map<String, String> paramMap) {
         String getPostId = paramMap.get("id");
+        System.out.println("postId : " + getPostId);
         if (getPostId == null)
             return false;
         Long postId = Long.parseLong(getPostId);

@@ -14,23 +14,23 @@ import java.util.Map;
 
 @WebServlet(name = "FrontControllerV4", urlPatterns = "/v4/*")
 public class FrontControllerV4 extends HttpServlet {
-    private HashMap<String, ControllerV4> controllerV3Map = new HashMap<>();
+    private HashMap<String, ControllerV4> controllerV4Map = new HashMap<>();
 
     public FrontControllerV4() {
-        controllerV3Map.put("/v4", new HomeControllerV4());
-        controllerV3Map.put("/v4/login", new LoginControllerV4());
-        controllerV3Map.put("/v4/logout", new LogoutControllerV4());
-        controllerV3Map.put("/v4/post-add", new PostAddControllerV4());
-        controllerV3Map.put("/v4/post-delete", new PostDeleteControllerV4());
-        controllerV3Map.put("/v4/post-detail", new PostDetailControllerV4());
-        controllerV3Map.put("/v4/post-detail-update", new PostDetailUpdateControllerV4());
+        controllerV4Map.put("/v4", new HomeControllerV4());
+        controllerV4Map.put("/v4/login", new LoginControllerV4());
+        controllerV4Map.put("/v4/logout", new LogoutControllerV4());
+        controllerV4Map.put("/v4/post-add", new PostAddControllerV4());
+        controllerV4Map.put("/v4/post-delete", new PostDeleteControllerV4());
+        controllerV4Map.put("/v4/post-detail", new PostDetailControllerV4());
+        controllerV4Map.put("/v4/post-detail-update", new PostDetailUpdateControllerV4());
     }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String requestURI = req.getRequestURI();
 
-        ControllerV4 controller = controllerV3Map.get(requestURI);
+        ControllerV4 controller = controllerV4Map.get(requestURI);
 
         if (controller == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);

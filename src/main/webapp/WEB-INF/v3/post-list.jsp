@@ -33,7 +33,7 @@
                         <c:forEach var="item" items="${posts}">
                             <c:choose>
                                 <c:when test="${username eq item.writer}">
-                                    <a href="/v2/post-detail?id=${item.id}&title=${item.title}&content=${item.content}"
+                                    <a href="/v3/post-detail?id=${item.id}&title=${item.title}&content=${item.content}"
                                        class="text-decoration-none">
                                         <li class="list-group-item">${item.id}. ${item.title}
                                             <div style="float:right;">작성자 : ${item.writer}</div>
