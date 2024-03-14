@@ -1,5 +1,6 @@
 package com.example.jspboard.v3;
 
+import com.example.jspboard.MyView;
 import com.example.jspboard.v3.controller.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

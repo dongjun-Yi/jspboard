@@ -2,7 +2,7 @@ package com.example.jspboard.v3.controller;
 
 import com.example.jspboard.model.Post;
 import com.example.jspboard.model.PostModel;
-import com.example.jspboard.v3.MyView;
+import com.example.jspboard.MyView;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
